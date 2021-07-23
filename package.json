@@ -4,7 +4,13 @@
   "description": "contacts-keeper-api",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "tslint --project tsconfig.json",
+    "start": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/index.ts",
+    "windows": "nodemon --watch 'src/**/*.ts' --exec ts-node src/index.ts",
+    "build": "tsc",
+    "prod": "node build/index.js localhost 8080",
+    "test": "jest",
+    "prettier-format": "prettier --config .prettierrc 'src/**/*.js' --write"
   },
   "repository": {
     "type": "git",
@@ -20,10 +26,25 @@
   },
   "homepage": "https://github.com/Sibabalwe-Qamata/contacts-keeper-api#readme",
   "dependencies": {
+    "@google-cloud/firestore": "^4.13.2",
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
+    "firebase-admin": "^9.11.0",
+    "isomorphic-fetch": "^3.0.0",
+    "isvalid": "^2.7.22",
+    "jsonwebtoken": "^8.5.1",
     "superstruct": "^0.15.2",
-    "typescript": "^4.3.5"
+    "typescript": "^4.3.5",
+    "validator": "^13.6.0"
+  },
+  "devDependencies": {
+    "husky": "^7.0.1",
+    "jest": "^27.0.6",
+    "nodemon": "^2.0.12",
+    "prettier": "^2.3.2",
+    "pretty-quick": "^3.1.1",
+    "ts-jest": "^27.0.4",
+    "ts-node": "^10.1.0"
   }
 }

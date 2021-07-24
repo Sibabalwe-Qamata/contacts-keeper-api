@@ -1,5 +1,5 @@
 import { User } from "../entities/user";
-import { UserRepository } from "../../data/repositories/user-repository";
+import { UserRepository } from "../repositories/user-repository";
 
 interface UserUsecase {
     CreateUser(user:any):Promise<User>;
